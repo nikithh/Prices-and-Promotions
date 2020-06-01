@@ -1,0 +1,9 @@
+name: "get all group names"
+request:
+  method: GET
+  url : /groupNames
+response:
+  status: 200
+  body:
+    - Flash Sale
+    - Festival Sale

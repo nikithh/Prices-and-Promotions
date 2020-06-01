@@ -1,0 +1,48 @@
+node{
+    stage('Killing containers') {
+            // Get some code from a GitHub repository
+            try{
+                
+            sh '''
+            docker kill zuul-server
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            try{
+                
+            sh '''
+            docker rm  zuul-server
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            
+            
+        }
+}
+node{
+        checkout scm
+        
+        stage ('Packaging Zuul') {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+                sh 'mvn package'
+        }
+        stage ('Building Zuul container') {
+                sh '''
+                docker build -t spring/zuul . 
+                '''
+        }
+        stage ('Running Zuul container') {
+                sh '''
+                docker run --restart=always --name=zuul-server --net=prices_and_promotions -d -p 8765:8765 spring/zuul
+                '''
+        }
+}

@@ -1,0 +1,25 @@
+name: "should not add cluster in given zone"
+request:
+  method: PUT
+  url: /India/cluster
+  body: 
+    store:
+      - storeId: 111
+        storeName: abc
+        address:
+          streetName: marathalli
+          city: blr
+          pin: 123212
+      - storeId: 222
+        storeName: def
+        address:
+          streetName: matikere
+          city: blr
+          pin: 560054
+    clusterId: 17
+    clusterName: Kerala
+    taxRate: 5.6  
+  headers:
+    Content-Type: application/json
+response:
+  status: 400

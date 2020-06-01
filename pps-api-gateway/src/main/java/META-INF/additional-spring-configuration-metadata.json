@@ -1,0 +1,77 @@
+{"properties": [
+  {
+    "name": "hystrix.command.default.execution.timeout.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.execution.timeout.enabled'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  },
+  {
+    "name": "ribbon.ReadTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.ReadTimeout'"
+  }
+]}

@@ -1,0 +1,16 @@
+name: "shld not add a vendor"
+request:
+  method: POST
+  url: /vendor
+  body:
+    email: 1@ps.com
+    companyName: '1'
+    companyType: baby products
+    password: abc
+    productSold:
+    - '1'
+    - '2'
+  headers: 
+    Content-Type: application/json
+response:
+  status: 400

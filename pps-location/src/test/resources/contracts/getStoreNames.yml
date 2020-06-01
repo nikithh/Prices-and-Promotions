@@ -1,0 +1,13 @@
+name: "should return store names"
+request:
+  method: GET
+  url: /Europe/Karnataka/stores/names
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    - abc
+    - def
+  headers:
+    Content-Type: application/json

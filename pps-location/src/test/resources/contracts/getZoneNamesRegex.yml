@@ -1,0 +1,13 @@
+name: "should return zone names regex"
+request:
+  method: GET
+  url: /zones/regex/In
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    - Europe
+    - India
+  headers:
+    Content-Type: application/json

@@ -1,0 +1,45 @@
+name: "should not insert a zone"
+request:
+  method: POST
+  url: /zone
+  body:
+    zoneId: 2
+    zoneName: India
+    liquorPricePerUnit: 15.6
+    cluster:
+      - store:
+          - storeId: 333
+            storeName: ghi
+            address:
+              streetName: BEL
+              city: blr
+              pin: 123213
+          - storeId: 444
+            storeName: jkl
+            address:
+              streetName: HSR
+              city: blr
+              pin: 560056
+        clusterId: 33
+        clusterName: Kerala
+        taxRate: 5.6
+      - store:
+          - storeId: 333
+            storeName: ghi
+            address:
+              streetName: BEL
+              city: blr
+              pin: 123213
+          - storeId: 444
+            storeName: jkl
+            address:
+              streetName: HSR
+              city: blr
+              pin: 560056
+        clusterId: 44
+        clusterName: Chennai
+        taxRate: 6.7
+  headers:
+    Content-Type: application/json
+response:
+  status: 400

@@ -1,0 +1,13 @@
+name: "should return zone names"
+request:
+  method: GET
+  url: /zones/names
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    - Europe
+    - India
+  headers:
+    Content-Type: application/json

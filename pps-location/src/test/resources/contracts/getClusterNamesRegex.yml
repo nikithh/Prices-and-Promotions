@@ -1,0 +1,15 @@
+name: "should return cluster names regex"
+request:
+  method: GET
+  url: /clusters/regex/Kar
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    - Europe/Karnataka
+    - Europe/Andhra
+    - India/Kerala
+    - India/Chennai
+  headers:
+    Content-Type: application/json

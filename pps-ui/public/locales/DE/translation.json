@@ -1,0 +1,109 @@
+{
+  "please fill username": "Bitte geben Sie den Benutzernamen ein",
+  "please fill password": "Bitte Passwort eingeben",
+  "loginAsVendor": "Als Anbieter anmelden",
+  "loginAsAdmin": "Als Admin anmelden",
+  "welcomeMain": "Herzlich willkommen",
+  "header": {
+    "logIn": "Anmeldung",
+    "logOut": "Ausloggen",
+    "title": "Einzelhandelsanwendung",
+    "home": "Accueil"
+  },
+  "login": {
+    "retailerLogin": "Einzelhändler Anmeldung",
+    "adminLogin": "Administrator Anmeldung",
+    "signIn": "Einloggen",
+    "userName": "Nutzername",
+    "password": "Passwort",
+    "invalidCredentials": "Benutzername / Kennwort ungültig"
+  },
+  "welcome": {
+    "dashboard": "Instrumententafel",
+    "createAdmin": "Admin erstellen",
+    "createZone": "Zone erstellen",
+    "createCluster": "Cluster erstellen",
+    "createStore": "Store erstellen",
+    "viewZones": "Zonen anzeigen",
+    "viewClusters": "Cluster anzeigen",
+    "addGroup": "Gruppe hinzufügen",
+    "addProducttoStore": "Produkt zum Store hinzufügen",
+    "queryOnDateRange": "Abfrage zum Datumsbereich",
+    "PriceOnDate": "Preis am Datum",
+    "assignProductToClusterZone": "Produkt dem Cluster / der Zone zuweisen",
+    "cancelNotEffectivePriceChange": "Nicht effektive Preisänderung abbrechen",
+    "applyPromotionInZoneLevel": "Bewerben Sie sich in Zonenebene",
+    "applyPromotionInClusterLevel": "Bewerben Sie sich auf Cluster-Ebene",
+    "editpriceandquantity": "Artikelprijs en hoeveelheid bewerken",
+    "priceOnDate": "Preis am Datum",
+    "cancelPromotionPercentage": "Prozentuale Promotion abbrechen",
+    "withdrawPercentagePromotionZone": "Prozentuale Promotion-Zone zurückziehen",
+    "withdrawPercentagePromotionCluster": "Percentage Promotion Cluster zurückziehen",
+    "cancelEffectivePriceChange": "Effektive Preisänderung abbrechen",
+    "sellCancelProductFixedPrice": "Produkt zum Festpreis verkaufen / stornieren",
+    "queryPromotionsOnDateRange": "Abfragen von Promotions im Datumsbereich",
+    "approvePromotions":"Genehmigen Sie Werbeaktionen",
+    "increaseQuantityAtZone":"Menge in Zone erhöhen",
+    "increaseQuantityAtCluster":"Erhöhen Sie die Menge im Cluster",
+    "adminActions":"Verwaltungsaktionen",
+    "prices":"Preise",
+    "promotions":"Promotions",
+    "location":"Standort",
+    "quantity":"Menge"
+  },
+  "vendorWelcome": {
+    "addProduct": "Produkt hinzufügen",
+    "updatePriceOfProduct": "Preis eines Produkts aktualisieren",
+    "viewProducts":"Produkte anzeigen"
+  },
+  "zoneForm": {
+    "lengthTooShort": "Die Zone muss größer als 5 Buchstaben sein",
+    "requirements": "Bedarf",
+    "createZone": "Erstellen sie eine zone",
+    "zoneName": "Zonenname",
+    "pricePerUnit": "Preis pro einheit",
+    "save": "Speichern",
+    "noZoneMsg": "Bitte geben sie den zonennamen ein"
+  },
+  "clusterForm": {
+    "lengthTooShort": "Der Cluster muss größer als 5 Buchstaben sein",
+    "requirements": "Bedarf",
+    "enterZone": "Zone eingeben",
+    "selectZone": "Wählen sie zone",
+    "clusterName": "Clustername",
+    "taxRate": "Steuersatz",
+    "save": "Speichern"
+  },
+  "storeForm": {
+    "lengthTooShort": "Der Name des Geschäfts muss aus mehr als 5 Buchstaben bestehen",
+    "requirements": "Bedarf",
+    "enterZone": "Zone eingeben",
+    "selectZone": "Wählen Sie zone",
+    "enterCluster": "Cluster eingeben",
+    "selectCluster": "Cluster auswählen",
+    "storeName": "Geschäftsname",
+    "address": "Adresse",
+    "streetName": "Straßenname",
+    "city": "Stadt",
+    "pinCode": "Geheimzahl",
+    "submit": "einreichen"
+  },
+  "zoneList": {
+    "zoneName": "Zonenname",
+    "numberOfClusters": "Anzahl der cluster"
+  },
+  "clusterList": {
+    "clusterName": "Clustername",
+    "numberOfStores": "Anzahl der geschäfte"
+  },
+  "message": {
+    "zoneSuccess": "Zone erfolgreich erstellt",
+    "emptyForm": "Bitte geben Sie die Details in das Formular ein",
+    "lengthTooShort": "Bitte geben sie mindestens 6 zeichen ein",
+    "zoneExists": "Sorry Zone existiert bereits",
+    "clusterSuccess1": "Cluster für Zone",
+    "clusterSuccess2": "wird erfolgreich erstellt",
+    "clusterExists": "Entschuldigung, Cluster existiert bereits",
+    "storeSuccess": "Store Erfolgreich erstellt"
+  }
+}

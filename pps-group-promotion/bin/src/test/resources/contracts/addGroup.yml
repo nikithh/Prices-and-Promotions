@@ -1,0 +1,26 @@
+name: "add a group"
+request:
+  method: POST
+  url: /group
+  body:
+    groupId: 2
+    groupName: Sale
+    productIds:
+    - 1
+    - 2
+    - 3
+    - 4
+  headers:
+    Content-Type: application/json
+response:
+  status: 201
+  body:
+    groupId: 3  
+    groupName: Sale
+    productIds:
+    - 1
+    - 2
+    - 3
+    - 4
+  headers:
+    Content-Type: application/json

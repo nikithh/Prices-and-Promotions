@@ -1,0 +1,83 @@
+name: "should return all zones"
+request:
+  method: GET
+  url: /zones
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    - zoneId: 1
+      zoneName: Europe
+      liquorPricePerUnit: 11.6
+      cluster:
+        - store:
+            - storeId: 111
+              storeName: abc
+              address:
+                streetName: marathalli
+                city: blr
+                pin: 123212
+            - storeId: 222
+              storeName: def
+              address:
+                streetName: matikere
+                city: blr
+                pin: 560054
+          clusterId: 11
+          clusterName: Karnataka
+          taxRate: 5.6
+        - store:
+            - storeId: 111
+              storeName: abc
+              address:
+                streetName: marathalli
+                city: blr
+                pin: 123212
+            - storeId: 222
+              storeName: def
+              address:
+                streetName: matikere
+                city: blr
+                pin: 560054
+          clusterId: 22
+          clusterName: Andhra
+          taxRate: 6.7
+    - zoneId: 2
+      zoneName: India
+      liquorPricePerUnit: 15.6
+      cluster:
+        - store:
+            - storeId: 333
+              storeName: ghi
+              address:
+                streetName: BEL
+                city: blr
+                pin: 123213
+            - storeId: 444
+              storeName: jkl
+              address:
+                streetName: HSR
+                city: blr
+                pin: 560056
+          clusterId: 33
+          clusterName: Kerala
+          taxRate: 5.6
+        - store:
+            - storeId: 333
+              storeName: ghi
+              address:
+                streetName: BEL
+                city: blr
+                pin: 123213
+            - storeId: 444
+              storeName: jkl
+              address:
+                streetName: HSR
+                city: blr
+                pin: 560056
+          clusterId: 44
+          clusterName: Chennai
+          taxRate: 6.7
+  headers:
+    Content-Type: application/json

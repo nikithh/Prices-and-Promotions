@@ -1,0 +1,8 @@
+name: "get all admins"
+request:
+  method: GET
+  url : /admins
+response:
+  status: 200
+  headers:
+    Content-Type: application/json

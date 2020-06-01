@@ -1,0 +1,21 @@
+name: "get all groups"
+request:
+  method: GET
+  url : /groups
+response:
+  status: 200
+  body:
+    - groupId: 1
+      groupName: Flash Sale
+      productIds:
+      - 1
+      - 2
+      - 3
+      - 4
+    - groupId: 2
+      groupName: Festival Sale
+      productIds:
+      - 5
+      - 6
+      - 7
+      - 8

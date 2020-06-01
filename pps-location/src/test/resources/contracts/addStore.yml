@@ -1,0 +1,15 @@
+name: "should add store in given cluster"
+request:
+  method: PUT
+  url: /Europe/Karnataka/store
+  body: 
+    storeId: 12
+    storeName: Midely
+    address:
+      streetName: Randy
+      city: Taiyuan
+      pin: 680294
+  headers:
+    Content-Type: application/json
+response:
+  status: 200

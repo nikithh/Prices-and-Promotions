@@ -1,0 +1,50 @@
+node{
+        checkout scm
+ 
+        stage ('Packaging Group container') {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+                sh 'mvn package'
+        }
+        stage('Killing containers') {
+            // Get some code from a GitHub repository
+            try{
+                
+            sh '''
+            docker kill group-management
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            try{
+                
+            sh '''
+            docker rm  group-management
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }      
+        }
+        stage ('Building Group container') {
+                sh '''
+                docker build -t spring/group . 
+                '''
+        }
+        stage ('Running Group container') {
+                sh '''
+                docker run  --restart=always --name=group-management --net=prices_and_promotions -d -p 9600:9600 spring/group
+                '''
+        }
+        stage('Sonar testcases') {
+                
+            def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                
+            sh "${sonarqubeScannerHome}/bin/sonar-scanner"
+        }
+}

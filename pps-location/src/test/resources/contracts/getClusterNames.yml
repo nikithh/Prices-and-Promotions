@@ -1,0 +1,13 @@
+name: "should return cluster names"
+request:
+  method: GET
+  url: /Europe/clusters/names
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    - Karnataka
+    - Andhra
+  headers:
+    Content-Type: application/json

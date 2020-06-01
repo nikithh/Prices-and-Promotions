@@ -1,0 +1,47 @@
+name: "should return zone by name"
+request:
+  method: GET
+  url: /zones/Europe
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    zoneId: 1
+    zoneName: Europe
+    liquorPricePerUnit: 11.6
+    cluster:
+    - store:
+      - storeId: 111
+        storeName: abc
+        address:
+          streetName: marathalli
+          city: blr
+          pin: 123212
+      - storeId: 222
+        storeName: def
+        address:
+          streetName: matikere
+          city: blr
+          pin: 560054
+      clusterId: 11
+      clusterName: Karnataka
+      taxRate: 5.6
+    - store:
+      - storeId: 111
+        storeName: abc
+        address:
+          streetName: marathalli
+          city: blr
+          pin: 123212
+      - storeId: 222
+        storeName: def
+        address:
+          streetName: matikere
+          city: blr
+          pin: 560054
+      clusterId: 22
+      clusterName: Andhra
+      taxRate: 6.7
+  headers:
+    Content-Type: application/json

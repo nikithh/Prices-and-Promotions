@@ -1,0 +1,79 @@
+properties([parameters([choice(choices:'dev\nprod\ntest',description:'Select profile',name:'profile')])])
+
+properties([parameters([choice(choices:'true\nfalse',description:'Exclude Testcases',name:'tests')])])
+
+node{
+        checkout scm
+
+        stage ('Packaging Product container') {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+                sh "mvn clean -Dmaven.test.skip=${params.tests} package -P${params.profile}"
+        }
+        stage('Killing containers') {
+            // Get some code from a GitHub repository
+            try{
+                
+            sh '''
+            docker kill product-management-9500
+            
+            '''
+            sh '''
+            docker kill product-management-9501
+            
+            '''
+            sh '''
+            docker kill product-management-9502
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            try{
+                
+             sh '''
+            docker rm  product-management-9500
+            
+            '''
+            sh '''
+            docker rm  product-management-9501
+            
+            '''
+            sh '''
+            docker rm  product-management-9502
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+        }
+        stage ('Building Product container') {
+                sh '''
+                docker build -t spring/product . 
+                '''
+        }
+        stage ('Running Product container') {
+                sh '''                
+                docker run  --name=product-management-9500 --restart=always --net=prices_and_promotions -d -p 9500:9500 spring/product
+                '''
+                sh 'sleep 30'
+                sh '''
+                docker run  --name=product-management-9501 --restart=always --net=prices_and_promotions -d -p 9501:9500 spring/product
+                '''
+                sh 'sleep 30'
+                sh '''
+               	docker run  --name=product-management-9502 --restart=always --net=prices_and_promotions -d -p 9502:9500 spring/product
+                '''
+        }
+        if(!(params.tests.toBoolean())){
+	        stage('Sonar testcases') {
+	                
+	            def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+	                
+	            sh "${sonarqubeScannerHome}/bin/sonar-scanner"
+	        }
+        }}

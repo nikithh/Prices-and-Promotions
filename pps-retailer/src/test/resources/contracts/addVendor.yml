@@ -1,0 +1,25 @@
+name: "shld add a vendor"
+request:
+  method: POST
+  url: /vendor
+  body:
+    email: 2@ps.com
+    companyName: 'abcdefgh'
+    companyType: liquor products
+    password: abcd
+    productSold:
+    - '1'
+  headers: 
+    Content-Type: application/json
+response:
+  status: 201
+  body:
+    vendorId: 2
+    email: 2@ps.com
+    companyName: 'abcdefgh'
+    companyType: liquor products
+    password: abcd
+    productSold:
+    - '1'
+  headers: 
+    Content-Type: application/json

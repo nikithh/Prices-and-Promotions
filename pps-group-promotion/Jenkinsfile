@@ -1,0 +1,68 @@
+properties([parameters([choice(choices:'dev\nprod\ntest',description:'Select profile',name:'profile')])])
+
+properties([parameters([choice(choices:'true\nfalse',description:'Exclude Testcases',name:'tests')])])
+
+node{
+        checkout scm
+ 
+        stage ('Packaging Group container') {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+                sh "mvn clean -Dmaven.test.skip=${params.tests} package -P${params.profile}"
+        }
+        stage('Killing containers') {
+            // Get some code from a GitHub repository
+            try{
+                
+            sh '''
+            docker kill group-management-9800
+            docker kill group-management-9801
+            docker kill group-management-9802
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            try{
+                
+            sh '''
+            docker rm  group-management-9800
+            docker rm group-management-9801
+            docker rm group-management-9802
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }      
+        }
+        stage ('Building Group container') {
+                sh '''
+                docker build -t spring/group . 
+                '''
+        }
+        stage ('Running Group container') {
+                sh '''
+                docker run  --restart=always --name=group-management-9800 --net=prices_and_promotions -d -p 9800:9800 spring/group
+                '''
+                sh 'sleep 30'
+                sh '''
+                docker run  --name=group-management-9801 --restart=always --net=prices_and_promotions -d -p 9801:9800 spring/group
+                '''
+                sh 'sleep 30'
+                sh '''
+               	docker run  --name=group-management-9802 --restart=always --net=prices_and_promotions -d -p 9802:9800 spring/group
+                '''
+        }
+        if(!(params.tests.toBoolean())){
+	        stage('Sonar testcases') {
+	                
+	            def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+	                
+	            sh "${sonarqubeScannerHome}/bin/sonar-scanner"
+	        }
+        }
+}

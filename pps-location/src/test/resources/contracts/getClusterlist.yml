@@ -1,0 +1,15 @@
+name: "should return all clusternames with number of stores"
+request:
+  method: GET
+  url: /cluster-map
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    Karnataka: 2
+    Andhra: 2
+    Kerala: 2
+    Chennai: 2
+  headers:
+    Content-Type: application/json

@@ -1,0 +1,108 @@
+{
+  "please fill username": "please fill username",
+  "please fill password": "please fill password",
+  "loginAsVendor": "Login As Vendor",
+  "loginAsAdmin": "Login As Admin",
+  "welcomeMain": "Welcome",
+  "header": {
+    "logIn": "Login",
+    "logOut": "Logout",
+    "title": "Retail Application",
+    "home": "Prices and Promotions"
+  },
+  "login": {
+    "retailerLogin": "Retailer Login",
+    "adminLogin": "Admin Login",
+    "signIn": "Sign In",
+    "userName": "User Name",
+    "password": "Password",
+    "invalidCredentials": "Invalid username/Password"
+  },
+  "welcome": {
+    "dashboard": "Dashboard",
+    "createAdmin": "Create Admin",
+    "queryOnDateRange": "Query On Date Range",
+    "createZone": "Create Zone",
+    "createCluster": "Create Cluster",
+    "createStore": "Create Store",
+    "viewZones": "View Zones",
+    "viewClusters": "View Clusters",
+    "addGroup": "Create Group",
+    "addProducttoStore": "Add Product to Store",
+    "assignProductToClusterZone": "Assign Price to Zone/Cluster",
+    "applyPromotionInZoneLevel": "Apply Promotion in Zone Level",
+    "applyPromotionInClusterLevel": "Apply Promotion in Cluster Level",
+    "editpriceandquantity": "Edit Item Price and Quantity",
+    "priceOnDate": "Price On Date",
+    "cancelPromotionPercentage": "Cancel Percentage Promotion",
+    "withdrawPercentagePromotionZone": "Withdraw Percentage Promotion Zone",
+    "withdrawPercentagePromotionCluster": "Withdraw Percentage Promotion Cluster",
+    "cancelNotEffectivePriceChange": "Cancel Not Effective Price Change",
+    "cancelEffectivePriceChange": "Cancel Effective Price Change",
+    "sellCancelProductFixedPrice": "Sell/ Cancel Product At Fixed Price",
+    "queryPromotionsOnDateRange": "Query Promotions On Date Range",
+    "approvePromotions":"Approve Promotions",
+    "increaseQuantityAtZone":"Increase Quantity at Zone",
+    "increaseQuantityAtCluster":"Increase Quantity at Cluster",
+    "adminActions":"Admin Actions",
+    "prices":"Prices",
+    "promotions":"Promotions",
+    "location":"Location",
+    "quantity":"Quantity"
+  },
+  "vendorWelcome": {
+    "addProduct": "Add a Product",
+    "updatePriceOfProduct": "Update Price of a Product",
+    "viewProducts":"View Products"
+  },
+  "zoneForm": {
+    "lengthTooShort": "Zone has to be greater than 5 letters",
+    "requirements": "Requirements",
+    "createZone": "Create a zone",
+    "zoneName": "Zone name",
+    "pricePerUnit": "Price per unit",
+    "save": "Save",
+    "noZoneMsg": "Please enter zone name"
+  },
+  "clusterForm": {
+    "lengthTooShort": "Cluster has to be greater than 5 letters",
+    "requirements": "Requirements",
+    "enterZone": "Enter zone",
+    "selectZone": "Select zone",
+    "clusterName": "Cluster name",
+    "taxRate": "Tax rate",
+    "save": "Save"
+  },
+  "storeForm": {
+    "lengthTooShort": "Cluster has to be greater than 5 letters",
+    "requirements": "Requirements",
+    "enterZone": "Enter zone",
+    "selectZone": "Select zone",
+    "enterCluster": "Enter cluster",
+    "selectCluster": "Select cluster",
+    "storeName": "Store name",
+    "address": "Address",
+    "streetName": "Street name",
+    "city": "City",
+    "pinCode": "Pin-code",
+    "submit": "Submit"
+  },
+  "zoneList": {
+    "zoneName": "Zone name",
+    "numberOfClusters": "Number of clusters"
+  },
+  "clusterList": {
+    "clusterName": "Cluster name",
+    "numberOfStores": "Number of stores"
+  },
+  "message": {
+    "zoneSuccess": "Zone created successfully",
+    "emptyForm": "Sorry please enter the details in the form",
+    "lengthTooShort": "Please enter minimum 6 characters",
+    "zoneExists": "Sorry Zone already exists",
+    "clusterSuccess1": "Cluster für Zone",
+    "clusterSuccess2": "wird erfolgreich erstellt",
+    "clusterExists": "Sorry Cluster already exists",
+    "storeSuccess": "Store Created Succesfully"
+  }
+}

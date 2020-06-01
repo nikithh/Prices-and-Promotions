@@ -1,0 +1,10 @@
+name: "should not add product to store"
+request:
+  method: PUT
+  url: /groups/Festival Sale/5
+response:
+  status: 200
+  body:
+    false
+  headers:
+    Content-Type: application/json

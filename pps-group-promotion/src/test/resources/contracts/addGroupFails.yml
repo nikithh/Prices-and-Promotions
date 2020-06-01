@@ -1,0 +1,16 @@
+name: "add a group fails"
+request:
+  method: POST
+  url: /group
+  body:
+    groupId: 1
+    groupName: Flash Sale
+    productIds:
+    - 1
+    - 2
+    - 3
+    - 4
+  headers:
+    Content-Type: application/json
+response:
+  status: 400

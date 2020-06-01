@@ -1,0 +1,19 @@
+name: "should insert a zone"
+request:
+  method: POST
+  url: /zone
+  body:
+    zoneId: 4
+    zoneName: England
+    liquorPricePerUnit: 15.6
+  headers:
+    Content-Type: application/json
+response:
+  status: 201
+  body:
+    zoneId: 4
+    zoneName: England
+    liquorPricePerUnit: 15.6
+    cluster: []
+  headers:
+    Content-Type: application/json

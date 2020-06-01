@@ -1,0 +1,13 @@
+name: "should return zonenames with size of cluster"
+request:
+  method: GET
+  url: /zone-map
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    Europe: 2
+    India: 2
+  headers:
+    Content-Type: application/json

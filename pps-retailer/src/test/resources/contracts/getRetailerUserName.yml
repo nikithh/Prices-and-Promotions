@@ -1,0 +1,12 @@
+name: "should return retailer password"
+request:
+  method: GET
+  url: /retailers/admin
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    21232f297a57a5a743894a0e4a801fc3
+  headers:
+    Content-Type: text/plain;charset=ISO-8859-1

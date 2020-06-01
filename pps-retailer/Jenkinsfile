@@ -1,0 +1,70 @@
+properties([parameters([choice(choices:'dev\nprod\ntest',description:'Select profile',name:'profile')])])
+
+properties([parameters([choice(choices:'true\nfalse',description:'Exclude Testcases',name:'tests')])])
+
+node{
+    stage('Killing containers') {
+            // Get some code from a GitHub repository
+            try{
+                
+            sh '''
+            docker kill vendor-retailer-management-9400
+            docker kill vendor-retailer-management-9401
+            docker kill vendor-retailer-management-9402
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            try{
+                
+            sh '''
+            docker rm  vendor-retailer-management-9400
+            docker rm  vendor-retailer-management-9401
+            docker rm  vendor-retailer-management-9402
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            
+            
+        }
+}
+node{
+        checkout scm
+
+        stage ('Packaging vendor-retailer container') {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+                sh "mvn clean -Dmaven.test.skip=${params.tests} package -P${params.profile}"
+        }
+        stage ('Building vendor-retailer container') {
+                sh '''
+                docker build -t spring/vendor . 
+                '''
+        }
+        stage ('Running vendor-retailer container') {
+                sh '''
+                docker run  --name=vendor-retailer-management-9400 --restart=always --net=prices_and_promotions -d -p 9400:9400 spring/vendor
+                '''
+                sh 'sleep 30'
+                sh '''
+                docker run  --name=vendor-retailer-management-9401 --restart=always --net=prices_and_promotions -d -p 9401:9400 spring/vendor
+                '''
+                sh 'sleep 30'
+                sh '''
+               	docker run  --name=vendor-retailer-management-9402 --restart=always --net=prices_and_promotions -d -p 9402:9400 spring/vendor
+                '''
+        }
+        if(!(params.tests.toBoolean())){
+	        stage('Sonar testcases') {
+	                
+	            def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+	                
+	            sh "${sonarqubeScannerHome}/bin/sonar-scanner"
+	        }
+        }}

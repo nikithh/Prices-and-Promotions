@@ -1,0 +1,48 @@
+node{
+    stage('Killing containers') {
+            // Get some code from a GitHub repository
+            try{
+                
+            sh '''
+            docker kill eureka-server
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            try{
+                
+            sh '''
+            docker rm  eureka-server
+            
+            '''
+            }
+            catch(e){
+                sh "echo no containers"
+            }
+            
+            
+        }
+}
+node{
+        checkout scm
+        
+        stage ('Packaging Eureka') {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+                sh 'mvn package'
+        }
+        stage ('Building Eureka container') {
+                sh '''
+                docker build -t spring/eureka . 
+                '''
+        }
+        stage ('Running Eureka container') {
+                sh '''
+                docker run --restart=always --name=eureka-server --net=prices_and_promotions -d -p 8761:8761 spring/eureka
+                '''
+        }
+}
