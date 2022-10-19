@@ -23,7 +23,7 @@
 		</sonar.jacoco.reportPath>
 		<sonar.language>java</sonar.language>
 		<feign-version>9.4.0</feign-version>
-		<jackson-version>2.10.1</jackson-version>
+		<jackson-version>2.13.4.1</jackson-version>
 		<swagger.version>2.9.2</swagger.version>
 		<swagger-annotations.version>1.5.21</swagger-annotations.version>
 		<swagger-models.version>1.5.21</swagger-models.version>
